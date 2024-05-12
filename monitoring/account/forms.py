@@ -82,3 +82,14 @@ class ResetPasswordForm(forms.Form):
             validators.MaxLengthValidator(100),
         ]
     )
+
+
+class TwoFactorForm(forms.Form):
+    otp = forms.CharField(
+        label='Enter OTP',
+        required=True,
+        validators=[
+            validators.MaxLengthValidator(100),
+            validators.MinLengthValidator(100),
+        ]
+    )
